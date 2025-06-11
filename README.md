@@ -1,42 +1,42 @@
-# ChatApp 🗨️
+# Firebase ChatApp 🔥💬
 
-A real-time chat application built using **React**, **Node.js**, and **Socket.IO**.
+A real-time chat application built with **React**, **Firebase Firestore**, and **Firebase Authentication**.
 
 ---
 
 ## 🚀 Features
 
-- **Real-time messaging**: Instant updates using WebSockets
-- **Multi-user support**: Multiple users can chat simultaneously
-- **Mobile-friendly UI**: Clean and responsive React interface
-- **Backend powered by Node.js + Socket.IO**
+- **Real-time messaging**: Instant updates using Firebase Firestore  
+- **Google Sign-In**: Secure authentication with Firebase Auth  
+- **Profanity filtering**: Automatic bad word detection and filtering  
+- **Responsive design**: Works on desktop and mobile  
+- **Free hosting**: Deployed on Firebase Hosting  
 
 ---
 
 ## 📂 Project Structure
 
 ```
-/client             # React front-end
-  ├── public
-  └── src
-      ├── components
-      ├── pages
-      └── App.js
-
-/server             # Node.js + Socket.IO back-end
-  ├── index.js
-  └── package.json
+superchat/
+├── public/               # Static assets
+├── src/                  # React application
+│   ├── App.js            # Main application component
+│   ├── firebase.js       # Firebase configuration
+│   └── ...               # Other React components
+├── firebase.json         # Firebase deployment config
+└── package.json          # Project dependencies
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer     | Technologies                  |
-|-----------|-------------------------------|
-| Frontend  | React, Vite                   |
-| Backend   | Node.js, Express, Socket.IO   |
-| Styling   | CSS / Responsive Design       |
+| Layer     | Technologies                          |
+|-----------|---------------------------------------|
+| Frontend  | React, Create-React-App               |
+| Backend   | Firebase (Firestore, Authentication)  |
+| Hosting   | Firebase Hosting                      |
+| Styling   | CSS (App.css)                         |
 
 ---
 
@@ -44,94 +44,113 @@ A real-time chat application built using **React**, **Node.js**, and **Socket.IO
 
 ### Requirements
 
-- Node.js (v16+ recommended)
-- npm or yarn
+- Node.js (v16+ recommended)  
+- Firebase account (free tier available)  
+- Google account for authentication  
 
-### Installation
+---
 
-1. Clone the repo
+### 🔧 Installation
+
+1. **Clone the repo**
 
 ```bash
 git clone https://github.com/justsubway/ChatApp.git
 cd ChatApp
 ```
 
-2. Install dependencies
+2. **Install dependencies**
 
 ```bash
-cd server
-npm install
-
-cd ../client
 npm install
 ```
 
-3. Start development servers
+3. **Set up Firebase**
+
+- Go to [Firebase Console](https://console.firebase.google.com/) and create a new project  
+- Enable **Google Sign-In** and **Cloud Firestore**  
+- Copy your Firebase config into `src/firebase.js`
+
+4. **Create `.env.local` in project root**
+
+```env
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-bucket.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=123456789
+REACT_APP_FIREBASE_APP_ID=1:123456789:web:abc123def456
+```
+
+5. **Run the app locally**
 
 ```bash
-# Terminal 1 - start server
-cd server
 npm start
-
-# Terminal 2 - start client
-cd client
-npm run dev
 ```
 
-4. Open your browser at [http://localhost:5173](http://localhost:5173)
+Then visit: [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## ⚙️ Environment Variables
+## 🚀 Deployment (Firebase Hosting)
 
-Create the following `.env` files:
+1. **Build the project**
 
-### `server/.env`
-```
-PORT=3001
-CORS_ORIGIN=http://localhost:5173
+```bash
+npm run build
 ```
 
-### `client/.env.local`
+2. **Deploy to Firebase**
+
+```bash
+firebase deploy
 ```
-VITE_SERVER_URL=http://localhost:3001
+
+Your app will be live at:
+
+```
+https://your-project-id.web.app
 ```
 
 ---
 
 ## ✅ Usage
 
-- Visit the client in the browser
-- Enter a username (and optional room name if supported)
-- Start chatting in real time with others connected
+- Click **"Sign in with Google"**  
+- Type messages in the input field  
+- Messages appear instantly in real-time  
 
 ---
 
 ## 🧩 Customization Ideas
 
-- Add emoji support (e.g. `emoji-picker-react`)
-- Implement private messaging or rooms
-- Save chat history with a database like MongoDB
-- Add typing indicators or message timestamps
+- Add timestamps to messages  
+- Create multiple chat rooms  
+- Add emoji picker integration  
+- Enable image/file uploads with Firebase Storage  
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+1. Fork the repository  
+2. Create a new branch  
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Commit your changes  
+4. Push the branch  
+5. Open a Pull Request  
 
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 📬 Contact
 
-For questions or suggestions, reach out via GitHub: [@justsubway](https://github.com/justsubway)
+- GitHub: [@justsubway](https://github.com/justsubway)  
+- Live App: [https://chat-app-dc6f4.web.app](https://chat-app-dc6f4.web.app)
