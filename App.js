@@ -30,7 +30,7 @@ function App() {
     return (
         <div className="App">
             <header>
-                <h1>⚛️🔥💬</h1>
+                <h1>💬</h1>
                 <SignOut />
             </header>
 
@@ -102,9 +102,9 @@ function ChatRoom() {
 
         <form onSubmit={sendMessage}>
 
-            <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+            <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Tap to chat" />
 
-            <button type="submit" disabled={!formValue}>🕊️</button>
+            <button type="submit" disabled={!formValue}>📩g</button>
 
         </form>
     </>)
